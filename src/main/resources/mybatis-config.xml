@@ -10,12 +10,16 @@
         <setting name="useGeneratedKeys" value="true" />
     </settings>
 
-    <!--<typeAliases></typeAliases>-->
+    <!--<typeAliases>-->
+    <!---->
+    <!--</typeAliases>-->
 
     <!--<plugins>-->
-        <!--<plugin interceptor=""></plugin>-->
+    <!--<plugin interceptor=""></plugin>-->
     <!--</plugins>-->
 
-    <!--<typeHandlers></typeHandlers>-->
+    <!--<typeHandlers>-->
+    <!---->
+    <!--</typeHandlers>-->
 
 </configuration>
