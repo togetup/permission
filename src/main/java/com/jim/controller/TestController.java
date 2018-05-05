@@ -1,5 +1,7 @@
 package com.jim.controller;
 
+import com.jim.common.JsonData;
+import com.jim.exception.PermissionException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +19,23 @@ public class TestController {
 
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
-    @RequestMapping("/hello")
+//    @RequestMapping("/hello")
+//    @ResponseBody
+//    public String hello(){
+//        logger.info("hello");
+//        return "hello, permission";
+//    }
+
+
+    @RequestMapping("/hello.json")
     @ResponseBody
-    public String hello(){
-        logger.info("hello");
-        return "hello, permission";
+    public JsonData hellojd(){
+//        logger.error("hellojd");
+
+//        throw new RuntimeException("test exception");
+        throw new PermissionException("test exception");
+//        return JsonData.success("hello, permission");
     }
+
+
 }
