@@ -1,5 +1,6 @@
 package com.jim.common;
 
+import com.jim.exception.ParamException;
 import com.jim.exception.PermissionException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class SpringExceptionResolver implements HandlerExceptionResolver {
         // .json, .page
         // 这里我们要求项目中所有请求json数据，都是用.json结尾。
         if (url.endsWith(".json")){
-            if (e instanceof PermissionException){
+            if (e instanceof PermissionException || e instanceof ParamException){
                 JsonData result = JsonData.fail(e.getMessage());
 
                 // 下面的jsonView对应spring-servlet.xml下的 jsonView bean
