@@ -27,6 +27,5 @@ public class TestVo {
     @Max(value = 10, message = "id 不能大于 10")
     private Integer id;
 
-    @NotEmpty
     private List<String> str;
 }

@@ -55,9 +55,9 @@ public class TestController {
     public JsonData validate(TestVo vo) throws ParamException {
         logger.info("validate");
 
-        SysAclModuleMapper moduleMapper = ApplicationContextHelper.popBean(SysAclModuleMapper.class);
+        /*SysAclModuleMapper moduleMapper = ApplicationContextHelper.popBean(SysAclModuleMapper.class);
         SysAclModule module = moduleMapper.selectByPrimaryKey(1);
-        logger.info(JsonMapper.obj2String(module));
+        logger.info(JsonMapper.obj2String(module));*/
 
         // 第1种写法
         //try {
