@@ -49,18 +49,22 @@ public class TestController {
     @ResponseBody
     public JsonData validate(TestVo vo) throws ParamException {
         logger.info("validate");
-        /*try {
-            Map<String, String> map = BeanValidator.validateObject(vo);
-            //if (map != null && map.entrySet().size() > 0){
-            if (MapUtils.isNotEmpty(map)){
-                for (Map.Entry<String, String> entry : map.entrySet()){
-                    logger.info("{}->{}", entry.getKey(), entry.getValue());
-                }
-            }
-        } catch (Exception e){
 
-        }*/
+        // 第1种写法
+        //try {
+        //    Map<String, String> map = BeanValidator.validateObject(vo);
+        //    //if (map != null && map.entrySet().size() > 0){
+        //    if (MapUtils.isNotEmpty(map)){
+        //        for (Map.Entry<String, String> entry : map.entrySet()){
+        //            logger.info("{}->{}", entry.getKey(), entry.getValue());
+        //        }
+        //    }
+        //} catch (Exception e){
+        //}
+
+        // 第二种写法
         BeanValidator.check(vo);
+
         return JsonData.success("test validate");
     }
 }
