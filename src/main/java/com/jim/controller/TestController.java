@@ -62,7 +62,7 @@ public class TestController {
         //} catch (Exception e){
         //}
 
-        // 第二种写法
+        // 第2种写法
         BeanValidator.check(vo);
 
         return JsonData.success("test validate");
