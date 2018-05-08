@@ -15,6 +15,8 @@
     <context:component-scan base-package="com.jim.controller" />
     <context:component-scan base-package="com.jim.service" />
 
+    <bean class="com.jim.common.ApplicationContextHelper" lazy-init="false" />
+
     <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />-->
 
     <bean class="com.jim.common.SpringExceptionResolver" />

@@ -1,14 +1,19 @@
 package com.jim.controller;
 
+import com.jim.common.ApplicationContextHelper;
 import com.jim.common.JsonData;
+import com.jim.dao.SysAclModuleMapper;
 import com.jim.exception.ParamException;
 import com.jim.exception.PermissionException;
+import com.jim.model.SysAclModule;
 import com.jim.param.TestVo;
 import com.jim.util.BeanValidator;
+import com.jim.util.JsonMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +31,7 @@ public class TestController {
 
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
-//    @RequestMapping("/hello")
+    //    @RequestMapping("/hello")
 //    @ResponseBody
 //    public String hello(){
 //        logger.info("hello");
@@ -49,6 +54,10 @@ public class TestController {
     @ResponseBody
     public JsonData validate(TestVo vo) throws ParamException {
         logger.info("validate");
+
+        SysAclModuleMapper moduleMapper = ApplicationContextHelper.popBean(SysAclModuleMapper.class);
+        SysAclModule module = moduleMapper.selectByPrimaryKey(1);
+        logger.info(JsonMapper.obj2String(module));
 
         // 第1种写法
         //try {
