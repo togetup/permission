@@ -115,6 +115,7 @@
       <version>1.7.25</version>
     </dependency>
 
+
     <!-- jsp api-->
     <dependency>
       <groupId>org.apache.tomcat</groupId>
@@ -156,6 +157,12 @@
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.9.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.5</version>
     </dependency>
 
   </dependencies>
